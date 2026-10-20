@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Teste de Sincronização V2</title>
+
+    <link
+        rel="stylesheet"
+        href="teste-sincronizacao-v2.css">
+
+</head>
+
+<body>
+
+    <main class="container">
+
+        <!--==================================================
+                            TÍTULO
+        ==================================================-->
+
+        <header class="page-header">
+
+            <h1>
+                Teste de Sincronização por Porcentagem
+            </h1>
+
+            <p>
+                Compare múltiplos vídeos sincronizados utilizando porcentagem da duração.
+            </p>
+
+        </header>
+
+
+        <!--==================================================
+                    BARRA DE FERRAMENTAS
+        ==================================================-->
+
+        <section class="top-controls">
+
+            <input
+                type="file"
+                id="multiVideoInput"
+                accept="video/*"
+                multiple
+                hidden>
+
+            <button id="loadVideosBtn">
+                📂 Selecionar Vídeos
+            </button>
+
+            <button id="clearVideosBtn">
+                🗑 Limpar Todos
+            </button>
+
+        </section>
+
+
+        <!--==================================================
+                        CONTROLES
+        ==================================================-->
+
+        <section class="controls">
+
+            <button id="playBtn">
+                ▶ Play
+            </button>
+
+            <button id="pauseBtn">
+                ⏸ Pause
+            </button>
+
+            <button id="restartBtn">
+                ⏹ Reiniciar
+            </button>
+
+
+            <div class="grid-selector">
+
+                <button id="gridButton">
+                    ▦ Grid
+                </button>
+
+                <div
+                    id="gridMenu"
+                    class="grid-menu">
+
+                    <button data-grid="2">
+                        2 Vídeos
+                    </button>
+
+                    <button data-grid="4">
+                        4 Vídeos
+                    </button>
+
+                    <button data-grid="6">
+                        6 Vídeos
+                    </button>
+
+                    <div class="unlimited-control">
+
+                        <label for="unlimitedQuantity">
+                            Unlimited
+                        </label>
+
+                        <input
+                            id="unlimitedQuantity"
+                            type="number"
+                            min="1"
+                            max="50"
+                            value="8">
+
+                    </div>
+
+                    <button data-grid="unlimited">
+                        Aplicar
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <button id="tempoButton">
+                ⏱ Tempo
+            </button>
+
+
+            <div class="settings-selector">
+
+                <button id="settingsButton">
+                    ⚙ Configurações
+                </button>
+
+                <div
+                    id="settingsMenu"
+                    class="settings-menu">
+
+                    <label class="settings-option">
+
+                        <input
+                            type="checkbox"
+                            id="autoRestartVideos"
+                            checked>
+
+                        Reiniciar vídeos ao terminar
+
+                    </label>
+
+                    <label class="settings-option">
+
+                        <input
+                            type="checkbox"
+                            id="noVerticalCover">
+
+                        Não compilar vídeos verticais
+
+                    </label>
+
+                    <div class="settings-slider-group">
+
+                        <label for="gridScaleSlider">
+                            Tamanho da grade
+                        </label>
+
+                        <input
+                            id="gridScaleSlider"
+                            type="range"
+                            min="0.8"
+                            max="1.6"
+                            step="0.05"
+                            value="1">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!--==================================================
+                    SLIDER GLOBAL
+        ==================================================-->
+
+        <section class="global-slider-area">
+
+            <span>
+                0%
+            </span>
+
+            <input
+                type="range"
+                id="globalSlider"
+                min="0"
+                max="100"
+                value="0"
+                step="0.01">
+
+            <span>
+                100%
+            </span>
+
+        </section>
+
+
+        <!--==================================================
+                    ÁREA DOS VÍDEOS
+        ==================================================-->
+
+        <section
+            id="videoGrid"
+            class="video-grid">
+
+            <!--
+                Os players são criados
+                automaticamente pelo JavaScript.
+            -->
+
+        </section>
+
+    </main>
+
+
+    <script src="teste-sincronizacao-v2.js"></script>
+
+</body>
+
+</html>
